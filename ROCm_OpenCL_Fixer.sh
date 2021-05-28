@@ -8,7 +8,7 @@ if [ `whoami` != root ]; then
     exit
 fi
 
-cd ../../
+cd /
 amdPath=$(find /etc/OpenCL/vendors/ -type f -name 'amdocl64*.icd')
 rocmPath=$(find /opt -maxdepth 1 -type d -name 'rocm-*')
 
