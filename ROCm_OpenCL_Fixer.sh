@@ -8,15 +8,9 @@ if [ `whoami` != root ]; then
     exit
 fi
 
-# Find better way to do this
-cd ..
-cd ..
+cd ../../
 amdPath=$(find /etc/OpenCL/vendors/ -type f -name 'amdocl64*.icd')
-
-# And this
-cd
-cd ..
-cd ..
 rocmPath=$(find /opt -maxdepth 1 -type d -name 'rocm-*')
+
 sudo echo "${rocmPath}/opencl/lib/libamdocl64.so" > ${amdPath}
 echo Done
